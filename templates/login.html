@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <style>
+
+        @font-face {
+                    font-family: 'EF_MACHO';
+                    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_MACHO.woff2') format('woff2');
+                    font-weight: normal;
+                    font-style: normal;
+                    }
+        .wrap{
+
+            width: 300px;
+            margin: auto;
+        }
+
+        .logo{
+
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            color: #baef63;
+            padding-top: 50px;
+            font-family: 'EF_MACHO';
+            font-size: 35px;
+        }
+
+        .login-area > p{
+            padding: 8px 0;
+        }
+
+        p > .id {
+            border-style: none;
+            border-radius: 15px;
+            background-color: #fafafa;
+            width: 300px;
+            height: 40px;
+        }
+
+        .id:focus{
+            outline: 2px solid #baef63;
+        }
+
+
+        p > .pw {
+            width: 300px;
+            height: 40px;
+            border-style: none;
+            border-radius: 15px;
+            background-color: #fafafa;
+
+        }
+
+        .pw:focus{
+            outline: 2px solid #baef63;
+        }
+        .login-btn {
+            width: 300px;
+            height: 40px;
+            margin: 8px 0;
+            border-style: none;
+            border-radius: 15px;
+            background-color: #baef63;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .join-btn {
+            width: 300px;
+            height: 40px;
+            margin: 15px 0;
+            border-style: none;
+            border-radius: 15px;
+            background-color: #fcfafa;
+            color: #baef63;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .find {
+            margin-left: 35px;
+            color: #b6afaf;
+            cursor: pointer;
+
+        }
+        .find:hover{
+            color: #baef63;
+        }
+    </style>
+    <title>영동맛집탐방</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="logo-area">
+            <h1 class="logo">영동맛집탐방</h1>
+        </div>
+        <div class="login-area">
+            <p><input type="text" class=id placeholder="  ID"></p>
+            <p><input type="password" class="pw" placeholder="  PW"></p>
+        </div>
+        <button class="login-btn" onclick="open_box()">로그인하기</button>
+        <button class="join-btn" onclick="open_box()">회원가입</button>
+        <a href="" class="find" onclick="open_box()">아이디/비밀번호를 잊으셨나요?</a>
+    </div>
+
+</body>
+</html>
