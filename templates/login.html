@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -10,28 +10,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
-    
-    <title>Title</title>
 
     <style>
-         @font-face {
+
+        @font-face {
                     font-family: 'EF_MACHO';
                     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_MACHO.woff2') format('woff2');
                     font-weight: normal;
                     font-style: normal;
                     }
+        .wrap{
 
-         .header{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 250px;
+            width: 300px;
+            margin: auto;
         }
 
-         .logo{
+        .logo{
 
+            width: 300px;
+            height: 105px;
             text-align: center;
             color: #baef63;
             padding-top: 50px;
@@ -39,289 +36,96 @@
             font-size: 35px;
         }
 
-         .little {
+        .little {
             font-family: 'EF_MACHO';
             text-align: center;
             color: #baef63;
             font-size: 18px;
-        }
-
-        .header > .record-btn {
-            width: 200px;
-            height: 50px;
-            margin-top: 30px;
-            background-color: transparent;
-            border: 1px solid #baef63;
-            border-radius: 50px;
-            color: #baef63;
-        }
-
-        .header > .record-btn:hover {
-            border: 2px solid #baef63;
-        }
-
-        .mypost{
-            display: none;
-            width: 95%;
-            max-width: 500px;
-            margin: 20px auto 20px auto;
-            padding: 25px;
-            box-shadow: 0px 0px  3px 0px #d3cfcf;
-
+            margin-bottom: 95px;
 
         }
 
-        .form-control{
-            border-color: #baef63;
+        .login-area > p{
+            padding: 8px 0;
         }
 
-         label{
-            color: #baef63;
-        }
-        .input-group {
-            border-color: #baef63;
-        }
-        .input-group-text {
-            border: 1px solid #baef63;
-            background-color: #baef63;
-            color: white;
-        }
-
-        .form-select {
-            border-color: #baef63;
-            color: #baef63;
-            background:url("../static/native-arrow.jpg") no-repeat 95% 50%;
-            background-size: 10px;
-            appearance:none;
-            -webkit-appearance:none;
-            -moz-appearance:none;
-        }
-
-        select::-ms-expand {
-            display : none ;
-        }
-
-
-         textarea {
-                    width: 100%;
-                    height: 6.25em;
-                    border: none;
-                    resize: none;
-         }
-
-        .mybtns > button {
-            display: inline-block;
-            font-weight: 400;
-            line-height: 1.5;
-            text-align: center;
-            border: 1px solid transparent;
-            border-radius: 10px;
-            padding: 6px;
-            margin-top: 20px;
-        }
-
-        .mybtns > .btn-green {
-            height: 45px;
-            width: 90px;
-            background-color: #baef63;
-            color: white;
-            font-weight: bold;
-            margin-right: 5px;
-
-        }
-
-        .mybtns > .btn-gray {
-            height: 45px;
-             width: 60px;
+        p > .id {
+            border-style: none;
+            border-radius: 15px;
             background-color: #f8f9fa;
+            width: 300px;
+            height: 40px;
+        }
+
+        .id:focus{
+            outline: 2px solid #baef63;
+        }
+
+
+        p > .pw {
+            width: 300px;
+            height: 40px;
+            border-style: none;
+            border-radius: 15px;
+            background-color: #f8f9fa;
+
+        }
+
+        .pw:focus{
+            outline: 2px solid #baef63;
+        }
+        .login-btn {
+            width: 300px;
+            height: 45px;
+            margin: 8px 0;
+            border-style: none;
+            border-radius: 15px;
+            background-color: #baef63;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .join-btn {
+            width: 300px;
+            height: 45px;
+            margin: 15px 0;
+            border-style: none;
+            border-radius: 15px;
+            background-color: #f2f1f5;
             color: #baef63;
             font-weight: bold;
+            cursor: pointer;
         }
-        .btn-area {
-            width: 100%;
-            max-width: 1200px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            margin: auto;
 
-        }
-        .btn-area > .btn {
-            width: 100%;
-            max-width: 280px;
-            height: 50px;
-            background-color: #baef63;
-            font-size: 16px;
+        .find {
+            margin-left: 35px;
+            color: #b6afaf;
+            cursor: pointer;
+            text-decoration: none;
             font-weight: bold;
-            color: white;
-            margin: 50px 0 30px 0;
-            border-radius: 30px;
-            border: none;
 
         }
-
-
-
-        .mycard{
-            margin: 20px auto 0 auto;
-            width: 95%;
-            max-width: 1200px;
+        .find:hover{
+            color: #baef63;
         }
     </style>
-    <script>
-        function open_box() {
-            $('#post-box').show()
-        }
-
-        function close_box() {
-            $('#post-box').hide()
-        }
-    </script>
-
+    <title>영동맛집탐방</title>
 </head>
 <body>
-    <header class="header">
-        <h1 class="logo">맛탐</h1>
-         <h5  class="little">:영동지방맛탐방</h5>
-        <button class="record-btn" onclick="open_box()">기록하기</button>
-    </header>
-
-    <div class="mypost" id="post-box">
-        <div class="form-floating mb-3">
-            <input id="url" type="url" class="form-control">
-            <label>URL</label>
+    <div class="wrap">
+        <div class="logo-area">
+            <h1 class="logo">맛탐</h1>
+            <h5  class="little">:영동지방맛탐방</h5>
         </div>
-
-        <div class="input-group mb-3">
-
-                <label class="input-group-text" for="star">별점</label>
-                <select class="form-select" id="star">
-
-                    <option selected>-- 선택하기 -- </option>
-                    <option value="1">⭐</option>
-                    <option value="2">⭐⭐</option>
-                    <option value="3">⭐⭐⭐</option>
-                    <option value="4">⭐⭐⭐⭐</option>
-                    <option value="5">⭐⭐⭐⭐⭐</option>
-                </select>
+        <div class="login-area">
+            <p><input type="text" class="id" id="id" placeholder="  아이디"></p>
+            <p><input type="password" class="pw" placeholder="  비밀번호"></p>
         </div>
-
-        <div class="form-floating">
-            <textarea id="comment" class="form-control" placeholder="Leave a comment here"></textarea>
-            <label for="comment">코멘트</label>
-        </div>
-
-        <div class="mybtns">
-            <button onclick="open_box()" type="button" class="btn-green">기록하기</button>
-            <button onclick="close_box()" type="button" class="btn-gray">닫기</button>
-        </div>
+        <button class="login-btn" onclick = "location.href = 'index.html'">로그인하기</button>
+        <button class="join-btn" onclick = "location.href = 'join.html'">회원가입</button>
+        <a href="" class="find" onclick = "location.href = 'find_id_or_pw.html'">아이디/비밀번호를 잊으셨나요?</a>
     </div>
-    <div class="btn-area">
-        <button type="button" class="btn">속초</button>
-        <button type="button" class="btn">강릉</button>
-        <button type="button" class="btn">동해</button>
-        <button type="button" class="btn">양양</button>
-    </div>
-
-    <div class="mycard">
-        <div id="must-be-list" class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col">
-                <div class="card">
-                    <img src="http://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/039/143/medium/IMG_5649%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.jpg?2019" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="name">가게이름</h5>
-                        <p class="address">가게주소</p>
-                        <p class="star">⭐⭐⭐⭐</p>
-                        <p class="mycomment">코멘트가 들어갑니다</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="http://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/039/143/medium/IMG_5649%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.jpg?2019" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="name">가게이름</h5>
-                        <p class="address">가게주소</p>
-                        <p class="star">⭐⭐⭐⭐</p>
-                        <p class="mycomment">코멘트가 들어갑니다</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="http://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/039/143/medium/IMG_5649%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.jpg?2019" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="name">가게이름</h5>
-                        <p class="address">가게주소</p>
-                        <p class="star">⭐⭐⭐⭐</p>
-                        <p class="mycomment">코멘트가 들어갑니다</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="http://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/039/143/medium/IMG_5649%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.jpg?2019" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="name">가게이름</h5>
-                        <p class="address">가게주소</p>
-                        <p class="star">⭐⭐⭐⭐</p>
-                        <p class="mycomment">코멘트가 들어갑니다</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="http://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/039/143/medium/IMG_5649%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.jpg?2019" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="name">가게이름</h5>
-                        <p class="address">가게주소</p>
-                        <p class="star">⭐⭐⭐⭐</p>
-                        <p class="mycomment">코멘트가 들어갑니다</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="http://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/039/143/medium/IMG_5649%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.jpg?2019" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="name">가게이름</h5>
-                        <p class="address">가게주소</p>
-                        <p class="star">⭐⭐⭐⭐</p>
-                        <p class="mycomment">코멘트가 들어갑니다</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="http://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/039/143/medium/IMG_5649%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.jpg?2019" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="name">가게이름</h5>
-                        <p class="address">가게주소</p>
-                        <p class="star">⭐⭐⭐⭐</p>
-                        <p class="mycomment">코멘트가 들어갑니다</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <img src="http://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/039/143/medium/IMG_5649%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.jpg?2019" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="name">가게이름</h5>
-                        <p class="address">가게주소</p>
-                        <p class="star">⭐⭐⭐⭐</p>
-                        <p class="mycomment">코멘트가 들어갑니다</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
 
 </body>
 </html>
