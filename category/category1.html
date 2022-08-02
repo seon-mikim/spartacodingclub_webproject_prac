@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <title>Title</title>
+
+    <style>
+        @font-face {
+            font-family: 'EF_MACHO';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_MACHO.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 250px;
+        }
+
+        .logo {
+
+            text-align: center;
+            color: #baef63;
+            padding-top: 50px;
+            font-family: 'EF_MACHO';
+            font-size: 35px;
+        }
+
+        .wrap > .record-btn {
+            width: 200px;
+            height: 50px;
+            margin-top: 30px;
+            background-color: transparent;
+            border: 1px solid #baef63;
+            border-radius: 50px;
+            color: #baef63;
+        }
+
+        .wrap > .record-btn:hover {
+            border: 2px solid #baef63;
+        }
+
+        .mypost {
+
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto 0 auto;
+            padding: 25px;
+            box-shadow: 0px 0px 3px 0px #d3cfcf;
+
+
+        }
+
+        .form-control {
+            border-color: #baef63;
+        }
+
+        label {
+            color: #baef63;
+        }
+
+        .input-group {
+            border-color: #baef63;
+        }
+
+        .input-group-text {
+            border: 1px solid #baef63;
+            background-color: #baef63;
+            color: white;
+        }
+
+        .form-select {
+            border-color: #baef63;
+            color: #baef63;
+        }
+
+        .form-select > option {
+            border-color: #baef63;
+
+        }
+
+        .mybtns > button {
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            padding: 6px;
+            margin-top: 20px;
+        }
+
+        .mybtns > .btn-green {
+            background-color: #baef63;
+            color: white;
+        }
+
+        .mybtns > .btn-gray {
+            background-color: #fafafa;
+            color: #baef63;
+        }
+
+        .mycategory {
+            width: 600px;
+            max-width: 100vw;
+            margin: auto;
+        }
+
+        #post-box0 {
+            width: 500px;
+            margin: 20px auto;
+            padding: 50px;
+            border: black solid;
+            border-radius: 5px;
+        }
+
+        #post-box1 {
+            width: 500px;
+            margin: 20px auto;
+            padding: 50px;
+            border: black solid;
+            border-radius: 5px;
+        }
+
+        #post-box2 {
+            width: 500px;
+            margin: 20px auto;
+            padding: 50px;
+            border: black solid;
+            border-radius: 5px;
+        }
+
+        #post-box3 {
+            width: 500px;
+            margin: 20px auto;
+            padding: 50px;
+            border: black solid;
+            border-radius: 5px;
+        }
+
+    </style>
+
+    <script>
+
+
+        function openClose0() {
+            if ($("#post-box0").css("display") == "block") {
+                $("#post-box0").hide();
+                $("#btn-post-box0").text("강릉");
+            } else {
+                $("#post-box0").show();
+                $("#btn-post-box0").text("강릉");
+            }
+        }
+
+        function openClose1() {
+            if ($("#post-box1").css("display") == "block") {
+                $("#post-box1").hide();
+                $("#btn-post-box1").text("속초");
+            } else {
+                $("#post-box1").show();
+                $("#btn-post-box1").text("속초");
+            }
+        }
+
+        function openClose2() {
+            if ($("#post-box2").css("display") == "block") {
+                $("#post-box2").hide();
+                $("#btn-post-box2").text("양양");
+            } else {
+                $("#post-box2").show();
+                $("#btn-post-box2").text("양양");
+            }
+        }
+
+        function openClose3() {
+            if ($("#post-box3").css("display") == "block") {
+                $("#post-box3").hide();
+                $("#btn-post-box3").text("동해");
+            } else {
+                $("#post-box3").show();
+                $("#btn-post-box3").text("동해");
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <h1 class="logo">영동맛집탐방</h1>
+    <button class="record-btn" onclick="open_box()">기록하기</button>
+</div>
+
+<div class="mypost" id="post-box">
+    <div class="form-floating mb-3">
+        <input id="url" type="email" class="form-control" placeholder="name@example.com">
+        <label>URL</label>
+    </div>
+
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">별점</label>
+        <select class="form-select" id="star">
+            <option selected>-- 선택하기 --</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+    </div>
+
+    <div class="form-floating">
+        <textarea id="comment" class="form-control" placeholder="Leave a comment here"></textarea>
+        <label for="floatingTextarea2">코멘트</label>
+    </div>
+
+    <div class="mybtns">
+        <button onclick="posting()" type="button" class="btn-green">기록하기</button>
+        <button onclick="close_box()" type="button" class="btn-gray">닫기</button>
+    </div>
+</div>
+
+<link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+<style>
+t{ font-family: "Stylish", sans-serif; }</style>
+<div class="mycategory">
+    <p class="lead">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><t>카테고리 연습용입니다</t></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a onclick="openClose0()" id="btn-post-box0" class="nav-link" href="#">강릉</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="openClose1()" id="btn-post-box1" class="nav-link" href="#">속초</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="openClose2()" id="btn-post-box2" class="nav-link" href="#">양양</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="openClose3()" id="btn-post-box3" class="nav-link" href="#">동해</a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick class="nav-link" href="category2.html">뒤로가기</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </p>
+</div>
+<div id="post-box0" class="form-post" style="display:none">
+<p>강릉</p>
+</div>
+<div id="post-box1" class="form-post" style="display:none">
+<p>속초</p>
+</div>
+<div id="post-box2" class="form-post" style="display:none">
+<p>양양</p>
+</div>
+<div id="post-box3" class="form-post" style="display:none">
+<p>동해</p>
+</div>
+
+<div class="mycards">
+    <div class="row row-cols-1 row-cols-md-4 g-4" id="cards-box">
+
+    </div>
+</div>
+
+</body>
+</html>
