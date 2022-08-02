@@ -27,7 +27,7 @@
 
         .logo{
 
-            width: 370px;
+            width: 300px;
             height: 200px;
             text-align: center;
             color: #baef63;
@@ -43,8 +43,8 @@
         p > .id {
             border-style: none;
             border-radius: 15px;
-            background-color: #fafafa;
-            width: 370px;
+            background-color: #f8f9fa;
+            width: 300px;
             height: 40px;
         }
 
@@ -54,11 +54,11 @@
 
 
         p > .pw {
-            width: 370px;
+            width: 300px;
             height: 40px;
             border-style: none;
             border-radius: 15px;
-            background-color: #fafafa;
+            background-color: #f8f9fa;
 
         }
 
@@ -66,8 +66,8 @@
             outline: 2px solid #baef63;
         }
         .login-btn {
-            width: 370px;
-            height: 40px;
+            width: 300px;
+            height: 45px;
             margin: 8px 0;
             border-style: none;
             border-radius: 15px;
@@ -78,12 +78,12 @@
         }
 
         .join-btn {
-            width: 370px;
-            height: 40px;
+            width: 300px;
+            height: 45px;
             margin: 15px 0;
             border-style: none;
             border-radius: 15px;
-            background-color: #fcfafa;
+            background-color: #f2f1f5;
             color: #baef63;
             font-weight: bold;
             cursor: pointer;
@@ -93,24 +93,26 @@
             margin-left: 35px;
             color: #b6afaf;
             cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
 
         }
         .find:hover{
             color: #baef63;
         }
     </style>
-    <title>Log In | 강원영동 맛집모아</title>
+    <title>영동맛집탐방</title>
 </head>
 <body>
     <div class="wrap">
         <div class="logo-area">
-            <h1 class="logo">강원영동 맛집모아</h1>
+            <h1 class="logo">영동맛집탐방</h1>
         </div>
         <div class="login-area">
             <p><input type="text" class=id placeholder="  ID"></p>
             <p><input type="password" class="pw" placeholder="  PW"></p>
         </div>
-        <button class="login-btn" onclick="open_box()">로그인하기</button>
+        <button class="login-btn" onclick = "location.href = 'index.html'">로그인하기</button>
         <button class="join-btn" onclick="open_box()">회원가입</button>
         <a href="" class="find" onclick="open_box()">아이디/비밀번호를 잊으셨나요?</a>
     </div>
