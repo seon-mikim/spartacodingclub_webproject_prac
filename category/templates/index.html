@@ -25,11 +25,11 @@
             width: 100%;
             height: 250px;
 
-            background-image: linear-gradient(0deg, rgba(219, 243, 195, 0.5), rgba(219, 243, 195, 0.5)), url('');
+            background-image: linear-gradient(0deg, rgba(219, 243, 195, 0.5), rgba(219, 243, 195, 0.5)), url('.');
             background-position: center;
             background-size: cover;
 
-            color: #baef63;
+            color: #4caf50;
 
             display: flex;
             flex-direction: column;
@@ -46,8 +46,8 @@
 
             border-radius: 50px;
 
-            border: 1px solid #baef63;
-            background-color: #baef63;
+            border: 1px solid #4caf50;
+            background-color: #4caf50;
 
             margin-top: 10px;
         }
@@ -70,38 +70,40 @@
             width: 95%;
             max-width: 500px;
             margin: 20px auto 0px auto;
+            margin-bottom: 30px;
             padding: 20px;
-            box-shadow: 0px 0px 3px 0px  #d3cfcf;
+            box-shadow: 0px 0px 3px 0px #d3cfcf;
 
 
-            border: 1px solid #baef63;
+            border: 1px solid #4caf50;
 
 
             display: none;
         }
 
-        .form-control{
-            border-color: #baef63;
+        .form-control {
+            border-color: #4caf50;
 
         }
 
         .input-group {
-            border-color: #baef63;
+            border-color: #4caf50;
 
         }
 
         .input-group-text {
-            border: 1px solid #baef63;
-            background-color: #baef63;
+            border: 1px solid #4caf50;
+            background-color: #4caf50;
             color: white;
         }
 
         .form-select {
-            border-color: #baef63;
-            color: #baef63;
+            border-color: #4caf50;
+            color: #4caf50;
         }
+
         .form-select > option {
-            border-color: #baef63;
+            border-color: #4caf50;
 
         }
 
@@ -115,6 +117,7 @@
             margin-top: 20px;
 
         }
+
         .mybtns > button {
             margin-right: 10px;
             display: inline-block;
@@ -126,19 +129,47 @@
             padding: 6px;
             margin-top: 20px;
         }
-         .mybtns > .btn-green {
-            background-color: #baef63;
+
+        .mybtns > .btn-green {
+            background-color: #4caf50;
             color: white;
         }
 
         .mybtns > .btn-gray {
             background-color: #fafafa;
-            color: #baef63;
+            color: #4caf50;
         }
+
+        .mycards {
+            margin: 40px auto 0px auto;
+            width: 95%;
+            max-width: 1200px;
+        }
+
+        .mypost {
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto 0px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 3px 0px #d3cfcf;
+
+
+            border: 1px solid #4caf50;
+
+
+            display: none;
+        }
+
+        .btn-primary {
+            background-color: transparent;
+            color: blue;
+
+        }
+
     </style>
     <script>
-        $(document).ready(function(){
-          listing();
+        $(document).ready(function () {
+            listing();
         });
 
         function listing() {
@@ -149,7 +180,7 @@
                 data: {},
                 success: function (response) {
                     let rows = response['movies']
-                    for(let i = 0; i < rows.length; i++) {
+                    for (let i = 0; i < rows.length; i++) {
                         let image = rows[i]['image']
                         let title = rows[i]['title']
                         let desc = rows[i]['desc']
@@ -183,15 +214,15 @@
 
         function posting() {
 
-            let url=$('#url').val()
-            let star=$('#star').val()
-            let comment=$('#comment').val()
-            let area=$('#area').val()
+            let url = $('#url').val()
+            let star = $('#star').val()
+            let comment = $('#comment').val()
+            let area = $('#area').val()
 
             $.ajax({
                 type: 'POST',
                 url: '/food',
-                data: {url_give:url, star_give:star, area_give:area, comment_give:comment },
+                data: {url_give: url, star_give: star, area_give: area, comment_give: comment},
                 success: function (response) {
                     alert(response['msg'])
                     window.location.reload();
@@ -199,10 +230,11 @@
             });
         }
 
-        function open_box(){
+        function open_box() {
             $('#post-box').show()
         }
-        function close_box(){
+
+        function close_box() {
             $('#post-box').hide()
         }
     </script>
@@ -241,7 +273,7 @@
 
     <div class="form-floating">
         <textarea id="comment" class="form-control" placeholder="Leave a comment here"></textarea>
-        <label for="floatingTextarea2">코멘트</label>
+        <label for="comment">코멘트</label>
     </div>
     <div class="mybtns">
         <button onclick="posting()" type="button" class="btn btn-green">기록하기</button>
@@ -252,6 +284,54 @@
     <div class="row row-cols-1 row-cols-md-4 g-4" id="cards-box">
     </div>
 </div>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col">
+        <div class="card">
+            <img src="https://hf-product.s3.ap-northeast-2.amazonaws.com/blog/2021/05/1610612955675-1610612955675.png"
+                 class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">강릉시</h5>
+                <p class="card-text">강릉소개</p>
+                <a href="Gangneung.html" class="btn btn-primary">강릉 맛집 바로가기</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://romantrip.co.kr/wp-content/uploads/2020/12/KakaoTalk_20201127_161904162.jpg"
+                 class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">속초시</h5>
+                <p class="card-text">속초소개</p>
+                <a href="Sokcho.html" class="btn btn-primary">속초 맛집 바로가기</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://static.hanatour.com/product/2021/06/23/06383xo9qm/default.jpg" class="card-img-top"
+                 alt="...">
+            <div class="card-body">
+                <h5 class="card-title">양양군</h5>
+                <p class="card-text">양양소개</p>
+                <a href="Yangyang.html" class="btn btn-primary">양양 맛집 바로가기</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img src="https://mblogthumb-phinf.pstatic.net/MjAxOTA2MDFfNzEg/MDAxNTU5MzY5NjI5NTcz.4GTcNyPmPQrvFyUUXkM2tvE51WVWol0ByZjuvMFRt04g.umOR2SadD4uAapU60N0D6bYeYjEf5ATcfpHmWmYgk1kg.JPEG.bom25bom/SE-ef0bea47-0d47-44cd-8208-27575dae24db.jpg?type=w800"
+                 class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">동해시</h5>
+                <p class="card-text">동해소개</p>
+                <a href="Donghae.html" class="btn btn-primary">동해 맛집 바로가기</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 
 </html>
