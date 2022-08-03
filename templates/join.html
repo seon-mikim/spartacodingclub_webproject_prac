@@ -102,6 +102,7 @@
                     if (response['result'] == 'success') {
                         $.cookie('mytoken', response['token'], {path: '/'});
                         window.location.href=("/category")
+                       // 11시 수정함
                     } else {
                         alert(response['msg'])
                     }
@@ -260,7 +261,6 @@
                         <nav class="level is-mobile">
                             <button class="level-item button is-sparta" onclick="sign_in()">로그인</button>
                         </nav>
-
                          <nav class="level is-mobile">
                             <button class="level-item button is-sparta is-outlined"
                                     onclick="toggle_sign_up()">
