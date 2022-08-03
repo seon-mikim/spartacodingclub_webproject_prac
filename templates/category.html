@@ -168,48 +168,48 @@
 
     </style>
     <script>
-        $(document).ready(function () {
-            listing();
-        });
-
-        function listing() {
-            $('#cards-box').empty()
-            $.ajax({
-                type: 'GET',
-                url: '/food',
-                data: {},
-                success: function (response) {
-                    let rows = response['movies']
-                    for (let i = 0; i < rows.length; i++) {
-                        let image = rows[i]['image']
-                        let title = rows[i]['title']
-                        let desc = rows[i]['desc']
-                        let area = rows[i]['area']
-                        let star = rows[i]['star']
-                        let comment = rows[i]['comment']
-
-
-                        let star_image = '⭐'.repeat(별)
-
-                        let temp_html = `<div class="col">
-                                            <div class="card h-100">
-                                                <img src="${image}"
-                                                     class="card-img-top">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">${title}</h5>
-                                                    <p class="card-text">${desc}</p>
-                                                    <p class="my-area">${area}</p>
-                                                    <p>${star_image}</p>
-                                                    <p class="mycomment">${comment}</p>
-                                                </div>
-                                            </div>
-                                        </div>`
-
-                        $('#cards-box').append(temp_html)
-                    }
-                }
-            })
-        }
+        // $(document).ready(function () {
+        //     listing();
+        // });
+        //
+        // function listing() {
+        //     $('#cards-box').empty()
+        //     $.ajax({
+        //         type: 'GET',
+        //         url: '/place',
+        //         data: {},
+        //         success: function (response) {
+        //             let rows = response['place']
+        //             for (let i = 0; i < rows.length; i++) {
+        //                 let image = rows[i]['image']
+        //                 let title = rows[i]['title']
+        //                 let desc = rows[i]['desc']
+        //                 let area = rows[i]['area']
+        //                 let star = rows[i]['star']
+        //                 let comment = rows[i]['comment']
+        //
+        //
+        //                 let star_image = '⭐'.repeat(star)
+        //
+        //                 let temp_html = `<div class="col">
+        //                                     <div class="card h-100">
+        //                                         <img src="${image}"
+        //                                              class="card-img-top">
+        //                                         <div class="card-body">
+        //                                             <h5 class="card-title">${title}</h5>
+        //                                             <p class="card-text">${desc}</p>
+        //                                             <p class="my-area">${area}</p>
+        //                                             <p>${star_image}</p>
+        //                                             <p class="mycomment">${comment}</p>
+        //                                         </div>
+        //                                     </div>
+        //                                 </div>`
+        //
+        //                 $('#cards-box').append(temp_html)
+        //             }
+        //         }
+        //     })
+        // }
 
 
         function posting() {
@@ -221,7 +221,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/food',
+                url: '/place',
                 data: {url_give: url, star_give: star, area_give: area, comment_give: comment},
                 success: function (response) {
                     alert(response['msg'])
@@ -293,7 +293,7 @@
             <div class="card-body">
                 <h5 class="card-title">강릉시</h5>
                 <p class="card-text">강릉소개</p>
-                <a href="Gangneung" class="btn btn-primary">강릉 맛집 바로가기</a>
+                <a href="Gangneung.html" class="btn btn-primary">강릉 맛집 바로가기</a>
             </div>
         </div>
     </div>
@@ -304,7 +304,7 @@
             <div class="card-body">
                 <h5 class="card-title">속초시</h5>
                 <p class="card-text">속초소개</p>
-                <a href="Sokcho" class="btn btn-primary">속초 맛집 바로가기</a>
+                <a href="Sokcho.html" class="btn btn-primary">속초 맛집 바로가기</a>
             </div>
         </div>
     </div>
@@ -315,7 +315,7 @@
             <div class="card-body">
                 <h5 class="card-title">양양군</h5>
                 <p class="card-text">양양소개</p>
-                <a href="Yangyang" class="btn btn-primary">양양 맛집 바로가기</a>
+                <a href="Yangyang.html" class="btn btn-primary">양양 맛집 바로가기</a>
             </div>
         </div>
     </div>
@@ -326,7 +326,7 @@
             <div class="card-body">
                 <h5 class="card-title">동해시</h5>
                 <p class="card-text">동해소개</p>
-                <a href="Donghae" class="btn btn-primary">동해 맛집 바로가기</a>
+                <a href="Donghae.html" class="btn btn-primary">동해 맛집 바로가기</a>
             </div>
         </div>
     </div>
