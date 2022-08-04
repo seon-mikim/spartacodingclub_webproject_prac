@@ -5,9 +5,12 @@ import hashlib
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from datetime import datetime, timedelta
-import requests
 from bs4 import BeautifulSoup
-
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import chromedriver_autoinstaller
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -15,7 +18,7 @@ app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 
 SECRET_KEY = 'SPARTA'
 
-client = MongoClient('mongodb://3.34.190.221', 27017, username="test", password="test")
+client = MongoClient('mongodb+srv://gogotest:spa0727rtan@cluster0.xukpzid.mongodb.net/Cluster0?retryWrites=true&w=majority')
 db = client.dbsparta_plus_signup
 
 
@@ -108,11 +111,23 @@ def place_post():
     comment_receive = request.form['comment_give']
     area_receive = request.form['area_give']
 
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
-    data = requests.get(url_receive, headers=headers)
+    chrome_ver = chromedriver_autoinstaller.get_chrome_version().split('.')[0]
 
-    soup = BeautifulSoup(data.content, 'html.parser')
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    options.add_argument('window-size=1928x1090')
+    options.add_argument('disable-gpu')
+
+    try:
+        driver = webdriver.Chrome(f'./{chrome_ver}/chromedriver.exe', chrome_options=options)
+    except:
+        chromedriver_autoinstaller.install(True)
+        driver = webdriver.Chrome(f'./{chrome_ver}/chromedriver.exe', chrome_options=options)
+
+    driver.get(url_receive)
+    WebDriverWait(driver, 5).until(EC.frame_to_be_available_and_switch_to_it((By.ID, "entryIframe")))
+
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
 
     title = soup.select_one('meta[property="og:title"]')['content'].split(":")
     image = soup.select_one('meta[property="og:image"]')['content']
